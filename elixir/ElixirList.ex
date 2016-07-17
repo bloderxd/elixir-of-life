@@ -10,8 +10,6 @@ defmodule ElixirList do
 
   def map_func(collection, func), do: _map_func(collection, 0, func)
   defp _map_func([], total, _func), do: total
-  defp _map_func([head | tail], total, func) do
-    _map_func(tail, total + func.(head), func)
-  end
-  # EXAMPLE: (map_func [1, 2, 3], & &1 * &1) === 14 
+  defp _map_func([head | tail], total, func), do: _map_func(tail, total + func.(head), func)
+  # EXAMPLE: (map_func [1, 2, 3], & &1 * &1) === 14
 end
