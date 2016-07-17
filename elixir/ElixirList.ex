@@ -12,4 +12,6 @@ defmodule ElixirList do
   defp _map_func([], total, _func), do: total
   defp _map_func([head | tail], total, func), do: _map_func(tail, total + func.(head), func)
   # EXAMPLE: (map_func [1, 2, 3], & &1 * &1) === 14
+
+  def concat(first_collection, second_collection), do: first_collection ++ second_collection
 end
